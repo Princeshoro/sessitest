@@ -58,35 +58,8 @@ router.get('/', async (req, res) => {
 				   let b64data = Buffer.from(data).toString('base64');
 				   let session = await Qr_Code_By_Maher_Zubair.sendMessage(Qr_Code_By_Maher_Zubair.user.id, { text: '' + b64data });
 	
-				   let SIGMA_MD_TEXT = `
-*LUCKY MD V5 QR CODE CONNECTED*
-
-> You have completed the first step of Deploying *LUCKY_MD V5*, Copy the above message and deploy your bot.Meanwhile you must follow the 4 steps. 
-
-> 1st STEP
-*TAP THE LINK BELOW AND FOLLOW THE CHANNEL* 
-𓄂 *_https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f_*
-
-> 2nd STEP
-*YOU MUST JOIN OUR GROUP FOR UPDATES ON THIS BOT*
-𓄂 *_https://chat.whatsapp.com/Iu3UYEx1lE6IsHVRU7XKvp_*
-
-> 3rd STEP
-*FORK AND STAR 🌟 THE REPO FOR COURAGE*
-𓄂 *_https://github.com/Fred1e/lucky_md_*
-
-> 4th STEP 
-*VISIT FOR TUTORIALS IF YOU DON'T KNOW HOW TO DEPLOY*
-𓄂 *_https://www.youtube.com/@freeonlinetvT1_*
-
-*DEVELOPER1: FREDIE TECH*
-𓄂 *_https://wa.link/4d9cpj_*
-
-*DEVELOPER2:FREDIE_TECH*
-𓄂 *_https://wa.me/255620814108_*
-
-> MADE ON EARTH BY FREDIE🇹🇿
-> CREATED BY FREDIE TECH💎 `
+				   let SIGMA_MD_TEXT = `𝗣𝗥𝗜𝗡𝗖𝗘-𝗚𝗗𝗦 
+               😍𝙔𝙤𝙪 𝙝𝙖𝙫𝙚 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙎𝙘𝙖𝙣𝙣𝙚𝙙 𝙃𝙚𝙧𝙚 𝙞𝙨 𝙮𝙤𝙪𝙧 𝙎𝙀𝙎𝙎𝙄𝙊𝙉 𝙘𝙤𝙥𝙮 𝙞𝙩 𝙖𝙣𝙙 𝙙𝙚𝙥𝙡𝙤𝙮 𝙮𝙤𝙪𝙧 𝙗𝙤𝙩`
 					
 	 await Qr_Code_By_Maher_Zubair.sendMessage(Qr_Code_By_Maher_Zubair.user.id,{text:SIGMA_MD_TEXT},{quoted:session})
 
