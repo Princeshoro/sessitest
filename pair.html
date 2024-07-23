@@ -167,7 +167,7 @@
       let text = document.getElementById("copy").innerText;
       let obj = document.getElementById("copy");
       await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
-      obj.innerText = "COPIED";
+      obj.innerText = "Successfully COPIED";
       obj.style = "color:yellow;font-weight:bold";
       obj.size = "5";
       setTimeout(() => {
@@ -204,7 +204,7 @@
         a.innerHTML = '<a style="color:white;font-weight:bold">𝙷𝚘𝚕𝚍 𝚘𝚗 𝚋𝚘𝚜𝚜 𝚙𝚛𝚘𝚌𝚎𝚎𝚍𝚒𝚗𝚐...😍</a><br><br>';
         let { data } = await axios(`/code?number=${Maher_Zubair}`);
         let code = data.code || "Service Unavailable";
-        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:green;font-weight:bold" size="5">YOUR CODE: <span style="color:red;font-weight:bold">' + code + '</span></font><br><br><br>';
+        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:green;font-weight:bold" size="5"> CODE: <span style="color:red;font-weight:bold">' + code + '</span></font><br><br><br>';
       }
     });
   </script>
