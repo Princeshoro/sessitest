@@ -49,8 +49,6 @@ router.get('/', async (req, res) => {
                     const sessionXeon = fs.readFileSync('./session/creds.json');
                     XeonBotInc.groupAcceptInvite("Jo5bmHMAlZpEIp75mKbwxP");
 				const xeonses = await XeonBotInc.sendMessage(XeonBotInc.user.id, { document: sessionXeon, mimetype: `application/json`, fileName: `creds.json` });
-				XeonBotInc.sendMessage(XeonBotInc.user.id, {quoted: xeonses});
-                  
 				await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `You have successfully paired Here is your SESSION file upload it in Session folder and deploy your bot\nDo not share this file with anybody\n\nPRINCE-GDS ` }, {quoted: xeonses});
         await delay(100);
         return await removeFile('./session');
