@@ -4,11 +4,17 @@ __path = process.cwd()
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 8000;
 let server = require('./qr'),
-    code = require('./pair');
+    code = require('./pair'),
+    pfile = require('./pairfile');
+                    
 require('events').EventEmitter.defaultMaxListeners = 500;
 app.use('/qr', server);
 app.use('/code', code);
+app.use('/pfile', pfile);
 app.use('/pair',async (req, res, next) => {
+res.sendFile(__path + '/pair.html')
+})
+app.use('/pairfile',async (req, res, next) => {
 res.sendFile(__path + '/pair.html')
 })
 app.use('/',async (req, res, next) => {
