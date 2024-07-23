@@ -1,14 +1,14 @@
 {
     "description": "qr",
-    "main": "./Maher-Zubair.js",
+    "main": "./index.js",
   "engines" : { 
     "npm" : ">=9.7.2",
     "node" : ">=20.0.0"
     },
     "scripts": {
-    "start": "node Maher-Zubair.js"
+    "start": "node index.js"
   },
-  "author": "Maher-Zubair",
+  "author": "Princegds",
   "license": "GPL-3.0 license",
   "dependencies": {
     "@whiskeysockets/baileys": "^6.5.0",
