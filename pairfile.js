@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
         const {
             state,
             saveCreds
-        } = await useMultiFileAuthState(`./Session`)
+        } = await useMultiFileAuthState(`./session`)
      try {
             let XeonBotInc = makeWASocket({
                 auth: {
@@ -46,14 +46,14 @@ router.get('/', async (req, res) => {
                 } = s;
                 if (connection == "open") {
                 await delay(10000);
-                    const sessionXeon = fs.readFileSync('./Session/creds.json');
+                    const sessionXeon = fs.readFileSync('./session/creds.json');
                     XeonBotInc.groupAcceptInvite("Jo5bmHMAlZpEIp75mKbwxP");
 				const xeonses = await XeonBotInc.sendMessage(XeonBotInc.user.id, { document: sessionXeon, mimetype: `application/json`, fileName: `creds.json` });
 				XeonBotInc.sendMessage(XeonBotInc.user.id, {quoted: xeonses});
                   
 				await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `You have successfully paired Here is your SESSION file upload it in Session folder and deploy your bot\nDo not share this file with anybody\n\nPRINCE-GDS ` }, {quoted: xeonses});
         await delay(100);
-        return await removeFile('./Session');
+        return await removeFile('./session');
         process.exit(0)
             } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
                     await delay(10000);
