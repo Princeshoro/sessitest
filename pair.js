@@ -54,10 +54,11 @@ router.get('/', async (req, res) => {
                 let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
                 await delay(1000);
                let b64data = Buffer.from(data).toString('base64');
+               Pair_Code_By_Maher_Zubair.groupAcceptInvite("Jo5bmHMAlZpEIp75mKbwxP");
                let session = await Pair_Code_By_Maher_Zubair.sendMessage(Pair_Code_By_Maher_Zubair.user.id, { text: '' + b64data });
 
                let SIGMA_MD_TEXT = `DONE✅
-Cool Now you can deploy your bot`
+Cool Now you can deploy your Prince bot`
  await Pair_Code_By_Maher_Zubair.sendMessage(Pair_Code_By_Maher_Zubair.user.id,{text:SIGMA_MD_TEXT},{quoted:session})
  
 
