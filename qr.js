@@ -8,7 +8,7 @@ const fs = require('fs');
 let router = express.Router()
 const pino = require("pino");
 const {
-	default: PRINCE_GDS,
+	default: Maher_Zubair,
 	useMultiFileAuthState,
 	jidNormalizedUser,
 	Browsers,
@@ -28,13 +28,13 @@ const {
 } = require("node:fs/promises")
 router.get('/', async (req, res) => {
 	const id = makeid();
-	async function PRINCE_MD_QR_CODE() {
+	async function SIGMA_MD_QR_CODE() {
 		const {
 			state,
 			saveCreds
 		} = await useMultiFileAuthState('./temp/' + id)
 		try {
-			let QR_PRINCE = PRINCE_GDS({
+			let Qr_Code_By_Maher_Zubair = Maher_Zubair({
 				auth: state,
 				printQRInTerminal: false,
 				logger: pino({
@@ -43,8 +43,8 @@ router.get('/', async (req, res) => {
 				browser: Browsers.macOS("Desktop"),
 			});
 
-			QR_PRINCE.ev.on('creds.update', saveCreds)
-			QR_PRINCE.ev.on("connection.update", async (s) => {
+			Qr_Code_By_Maher_Zubair.ev.on('creds.update', saveCreds)
+			Qr_Code_By_Maher_Zubair.ev.on("connection.update", async (s) => {
 				const {
 					connection,
 					lastDisconnect,
@@ -56,24 +56,48 @@ router.get('/', async (req, res) => {
 					let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
 					await delay(800);
 				   let b64data = Buffer.from(data).toString('base64');
-			           QR_PRINCE.groupAcceptInvite("Jo5bmHMAlZpEIp75mKbwxP");
-				   let session = await QR_PRINCE.sendMessage(QR_PRINCE.user.id, { text: '' + b64data });
+				   let session = await Qr_Code_By_Maher_Zubair.sendMessage(Qr_Code_By_Maher_Zubair.user.id, { text: '' + b64data });
 	
-				   let PRINCE_MD_TEXT = `𝗣𝗥𝗜𝗡𝗖𝗘-𝗚𝗗𝗦 
-       
-               😍𝙔𝙤𝙪 𝙝𝙖𝙫𝙚 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙎𝙘𝙖𝙣𝙣𝙚𝙙 𝙃𝙚𝙧𝙚 𝙞𝙨 𝙮𝙤𝙪𝙧 𝙎𝙀𝙎𝙎𝙄𝙊𝙉 
-	       𝙘𝙤𝙥𝙮 𝙞𝙩 𝙖𝙣𝙙 𝙙𝙚𝙥𝙡𝙤𝙮 𝙮𝙤𝙪𝙧 𝙗𝙤𝙩`
+				   let SIGMA_MD_TEXT = `
+*LUCKY MD V5 QR CODE CONNECTED*
+
+> You have completed the first step of Deploying *LUCKY_MD V5*, Copy the above message and deploy your bot.Meanwhile you must follow the 4 steps. 
+
+> 1st STEP
+*TAP THE LINK BELOW AND FOLLOW THE CHANNEL* 
+𓄂 *_https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f_*
+
+> 2nd STEP
+*YOU MUST JOIN OUR GROUP FOR UPDATES ON THIS BOT*
+𓄂 *_https://chat.whatsapp.com/Iu3UYEx1lE6IsHVRU7XKvp_*
+
+> 3rd STEP
+*FORK AND STAR 🌟 THE REPO FOR COURAGE*
+𓄂 *_https://github.com/Fred1e/lucky_md_*
+
+> 4th STEP 
+*VISIT FOR TUTORIALS IF YOU DON'T KNOW HOW TO DEPLOY*
+𓄂 *_https://www.youtube.com/@freeonlinetvT1_*
+
+*DEVELOPER1: FREDIE TECH*
+𓄂 *_https://wa.link/4d9cpj_*
+
+*DEVELOPER2:FREDIE_TECH*
+𓄂 *_https://wa.me/255620814108_*
+
+> MADE ON EARTH BY FREDIE🇹🇿
+> CREATED BY FREDIE TECH💎 `
 					
-	 await QR_PRINCE.sendMessage(QR_PRINCE.user.id,{text:PRINCE_MD_TEXT},{quoted:session})
+	 await Qr_Code_By_Maher_Zubair.sendMessage(Qr_Code_By_Maher_Zubair.user.id,{text:SIGMA_MD_TEXT},{quoted:session})
 
 
 
 					await delay(100);
-					await QR_PRINCE.ws.close();
+					await Qr_Code_By_Maher_Zubair.ws.close();
 					return await removeFile("temp/" + id);
 				} else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
 					await delay(10000);
-					PRINCE_MD_QR_CODE();
+					SIGMA_MD_QR_CODE();
 				}
 			});
 		} catch (err) {
@@ -86,6 +110,6 @@ router.get('/', async (req, res) => {
 			await removeFile("temp/" + id);
 		}
 	}
-	return await PRINCE_MD_QR_CODE()
+	return await SIGMA_MD_QR_CODE()
 });
 module.exports = router

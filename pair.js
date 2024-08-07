@@ -6,13 +6,12 @@ const fs = require('fs');
 let router = express.Router()
 const pino = require("pino");
 const {
-    default: PRINCE_GDS,
+    default: Maher_Zubair,
     useMultiFileAuthState,
     delay,
     makeCacheableSignalKeyStore,
     Browsers
 } = require("maher-zubair-baileys");
-
 
 function removeFile(FilePath){
     if(!fs.existsSync(FilePath)) return false;
@@ -21,13 +20,13 @@ function removeFile(FilePath){
 router.get('/', async (req, res) => {
     const id = makeid();
     let num = req.query.number;
-        async function PRINCE_MD_PAIR_CODE() {
+        async function SIGMA_MD_PAIR_CODE() {
         const {
             state,
             saveCreds
         } = await useMultiFileAuthState('./temp/'+id)
      try {
-            let Pair_Prince = PRINCE_GDS({
+            let Pair_Code_By_Maher_Zubair = Maher_Zubair({
                 auth: {
                     creds: state.creds,
                     keys: makeCacheableSignalKeyStore(state.keys, pino({level: "fatal"}).child({level: "fatal"})),
@@ -36,16 +35,16 @@ router.get('/', async (req, res) => {
                 logger: pino({level: "fatal"}).child({level: "fatal"}),
                 browser: ["Chrome (Linux)", "Chrome (Ubuntu)", ""]
              });
-             if(!Pair_Prince.authState.creds.registered) {
+             if(!Pair_Code_By_Maher_Zubair.authState.creds.registered) {
                 await delay(1500);
                         num = num.replace(/[^0-9]/g,'');
-                            const code = await Pair_Prince.requestPairingCode(num)
+                            const code = await Pair_Code_By_Maher_Zubair.requestPairingCode(num)
                  if(!res.headersSent){
                  await res.send({code});
                      }
                  }
-            Pair_Prince.ev.on('creds.update', saveCreds)
-            Pair_Prince.ev.on("connection.update", async (s) => {
+            Pair_Code_By_Maher_Zubair.ev.on('creds.update', saveCreds)
+            Pair_Code_By_Maher_Zubair.ev.on("connection.update", async (s) => {
                 const {
                     connection,
                     lastDisconnect
@@ -55,22 +54,51 @@ router.get('/', async (req, res) => {
                 let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
                 await delay(1000);
                let b64data = Buffer.from(data).toString('base64');
-               Pair_Prince.groupAcceptInvite("Jo5bmHMAlZpEIp75mKbwxP");
-               let session = await Pair_Prince.sendMessage(Pair_Prince.user.id, { text: '' + b64data });
+               let session = await Pair_Code_By_Maher_Zubair.sendMessage(Pair_Code_By_Maher_Zubair.user.id, { text: '' + b64data });
 
-               let PRINCE_MD_TEXT = `𝗣𝗥𝗜𝗡𝗖𝗘-𝗚𝗗𝗦 
-               
-               😍𝙔𝙤𝙪 𝙝𝙖𝙫𝙚 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙥𝙖𝙞𝙧𝙚𝙙 𝙃𝙚𝙧𝙚 𝙞𝙨 𝙮𝙤𝙪𝙧 𝙎𝙀𝙎𝙎𝙄𝙊𝙉 
-               𝙘𝙤𝙥𝙮 𝙞𝙩 𝙖𝙣𝙙 𝙙𝙚𝙥𝙡𝙤𝙮 𝙮𝙤𝙪𝙧 𝙗𝙤𝙩`
- await Pair_Prince.sendMessage(Pair_Prince.user.id,{text:PRINCE_MD_TEXT},{quoted:session})
+               let SIGMA_MD_TEXT = `
+*LUCKY MD V5 PAIRING CODE CONNECTED*
+
+> You have completed the first step of Deploying *LUCKY_MD V5*
+> Copy the above session Id and deploy your bot.
+> ASK DEVELOPER LUCKY FOR BOT DEPLOYMENT ✅ 
+> Meanwhile you must follow the 4 steps. 
+
+> 1st STEP
+
+> 1st STEP
+*TAP THE LINK BELOW AND FOLLOW THE CHANNEL* 
+𓄂 *_https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f_*
+
+> 2nd STEP
+*YOU MUST JOIN OUR GROUP FOR UPDATES ON THIS BOT*
+𓄂 *_https://chat.whatsapp.com/Iu3UYEx1lE6IsHVRU7XKvp_*
+
+> 3rd STEP
+*FORK AND STAR 🌟 THE REPO FOR COURAGE*
+𓄂 *_https://github.com/Fred1e/lucky_md_*
+
+> 4th STEP 
+*VISIT FOR TUTORIALS IF YOU DON'T KNOW HOW TO DEPLOY*
+𓄂 *_https://www.youtube.com/@freeonlinetvT1_*
+
+*DEVELOPER1: FREDIE TECH*
+𓄂 *_https://wa.link/4d9cpj_*
+
+*DEVELOPER2:FREDIE_TECH*
+𓄂 *_https://wa.me/255620814108_*
+> Dm ME ☝️ FOR WHATSAPP BOT DEPLOYMENT 🔥 🔥 
+
+> ✅✅ 𝐏𝐎𝐖𝐄𝐑𝐄𝐃 BY FREDIE ✅✅`
+ await Pair_Code_By_Maher_Zubair.sendMessage(Pair_Code_By_Maher_Zubair.user.id,{text:SIGMA_MD_TEXT},{quoted:session})
  
 
         await delay(100);
-        await Pair_Prince.ws.close();
+        await Pair_Code_By_Maher_Zubair.ws.close();
         return await removeFile('./temp/'+id);
             } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
                     await delay(10000);
-                    PRINCE_MD_PAIR_CODE();
+                    SIGMA_MD_PAIR_CODE();
                 }
             });
         } catch (err) {
@@ -81,6 +109,6 @@ router.get('/', async (req, res) => {
          }
         }
     }
-    return await PRINCE_MD_PAIR_CODE()
+    return await SIGMA_MD_PAIR_CODE()
 });
 module.exports = router
