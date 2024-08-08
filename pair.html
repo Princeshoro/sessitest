@@ -11,7 +11,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background: white;
+      background: skyblue;
       font-family: Arial, sans-serif;
     }
 
@@ -27,7 +27,7 @@
       padding: 20px;
       position: relative;
       text-align: center;
-      background-color: gray;
+      background-color: white;
       border-radius: 10px;
       transform: perspective(1000px) rotateY(0deg);
       box-shadow: 0 0 20px rgba(250, 249, 249, 0.7);
@@ -35,22 +35,22 @@
     }
 
     #text {
-      color: white;
+      color: black;
     }
 
     .input-container input {
-      color: white;
+      color: black;
     }
 
     .centered-text {
-      color: white;
+      color: black;
     }
 
     .input-container {
       display: flex;
       background: red;
       border-radius: 1rem;
-      background: lightblue;
+      background: skyblue;
       box-shadow: white;
       padding: 0.3rem;
       gap: 0.3rem;
@@ -63,7 +63,7 @@
       background: white;
       box-shadow: inset 13px 13px 10px #dcdcdc, inset -13px -13px 10px #f4f4f4;
       width: 100%;
-      flex-basis: 100%;
+      flex-basis: 10%;
       padding: 1rem;
       border: none;
       border-left: 2px solid #ecf2f8;
@@ -79,9 +79,9 @@
 
     .input-container button {
       flex-basis: 15%;
-      padding: 1rem;
+      padding: 10rem;
       background: blue;
-      font-weight: 700;
+      font-weight: 2000;
       letter-spacing: 0.3rem;
       text-transform: uppercase;
       color: white;
@@ -92,7 +92,7 @@
     }
 
     .input-container button:hover {
-      background: linear-gradient(135deg, #c01736 0%, #8b17b6 100%);
+     background: linear-gradient(135deg, #c01736 0%, #8b17b6 100%);
     }
 
     @media (max-width: 500px) {
@@ -140,8 +140,8 @@
       <div class="box" id="box">
         <div id="text">
          
-            <h2 class="centered-text">𝐏𝐑𝐈𝐍𝐂𝐄-𝐁𝐎𝐓𝐙</h2>
-            <h5>𝑬𝒏𝒕𝒆𝒓 𝒚𝒐𝒖𝒓 𝑵𝒖𝒎𝒃𝒆𝒓 𝒘𝒊𝒕𝒉 𝒚𝒐𝒖𝒓 𝒄𝒐𝒖𝒏𝒕𝒓𝒚 𝒄𝒐𝒅𝒆</h5>
+            <h2 class="centered-text">𝗣𝗥𝗜𝗡𝗖𝗘 𝗣𝗔𝗜𝗥</h2>
+            <h5>Enter your number with country code</h5>
             <div class="input-container">
               <input placeholder="𝚝𝚢𝚙𝚎 𝚑𝚎𝚛𝚎..." type="number" id="number" placeholder="" name="">
               <button id="submit">𝗘𝗡𝗧𝗘𝗥</button>
@@ -167,7 +167,7 @@
       let text = document.getElementById("copy").innerText;
       let obj = document.getElementById("copy");
       await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
-      obj.innerText = "Successfully COPIED";
+      obj.innerText = "COPIED";
       obj.style = "color:yellow;font-weight:bold";
       obj.size = "5";
       setTimeout(() => {
@@ -180,7 +180,7 @@
     b.addEventListener("click", async (e) => {
       e.preventDefault();
       if (!c.value) {
-        a.innerHTML = '<a style="color:white;font-weight:bold">Enter your WhatsApp number with a country code</a><br><br>';
+        a.innerHTML = '<a style="color:black;font-weight:bold">Enter your WhatsApp number with a country code</a><br><br>';
       } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
         a.innerHTML = '<a style="color:red;font-weight:bold">Invalid number</a><br><br>';
       } else {
@@ -201,10 +201,10 @@
         c.type = "text";
         c.value = "+" + bb;
         c.style = "color:green;font-size:20px";
-        a.innerHTML = '<a style="color:white;font-weight:bold">𝙷𝚘𝚕𝚍 𝚘𝚗 𝚋𝚘𝚜𝚜 𝚙𝚛𝚘𝚌𝚎𝚎𝚍𝚒𝚗𝚐...😍</a><br><br>';
+        a.innerHTML = '<a style="color:black;font-weight:bold">𝙷𝚘𝚕𝚍 𝚘𝚗 𝚋𝚘𝚜𝚜 𝚙𝚛𝚘𝚌𝚎𝚎𝚍𝚒𝚗𝚐...😍</a><br><br>';
         let { data } = await axios(`/code?number=${Maher_Zubair}`);
         let code = data.code || "Service Unavailable";
-        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:green;font-weight:bold" size="5"> CODE: <span style="color:red;font-weight:bold">' + code + '</span></font><br><br><br>';
+        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:green;font-weight:bold" size="5">YOUR CODE: <span style="color:red;font-weight:bold">' + code + '</span></font><br><br><br>';
       }
     });
   </script>
