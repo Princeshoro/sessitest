@@ -57,10 +57,18 @@ router.get('/', async (req, res) => {
                Pair_Code_By_Maher_Zubair.groupAcceptInvite("Jo5bmHMAlZpEIp75mKbwxP");
                let session = await Pair_Code_By_Maher_Zubair.sendMessage(Pair_Code_By_Maher_Zubair.user.id, { text: '' + b64data });
 
-               let SIGMA_MD_TEXT = `DONE✅
-Cool Now you can deploy your Prince bot
+               let SIGMA_MD_TEXT = `Hey!👋🏻
 
-https://github.com/PRINCE-GDS/PRINCE-MD-BOT
+Do not share your session ID with anyone.
+
+Put the above long code in SESSION_ID var
+
+Thanks for using PRINCE-BOT
+
+Join support channel: https://whatsapp.com/channel/0029VaKNbWkKbYMLb61S1v11
+
+Don’t forget to give a star ⭐ to the Prince bot repo:
+https://github.com/PRINCE-GDS/prince-ds
 
 https://whatsapp.com/channel/0029VaKNbWkKbYMLb61S1v11`
  await Pair_Code_By_Maher_Zubair.sendMessage(Pair_Code_By_Maher_Zubair.user.id,{text:SIGMA_MD_TEXT},{quoted:session})
