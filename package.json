@@ -3,7 +3,7 @@
     "main": "./index.js",
   "engines" : { 
     "npm" : ">=9.7.2",
-    "node" : "20.15.1"
+    "node" : ">=20.15.1"
     },
     "scripts": {
     "start": "node index.js"
@@ -11,7 +11,7 @@
   "author": "Maher-Zubair",
   "license": "GPL-3.0 license",
   "dependencies": {
-    "@whiskeysockets/baileys": "*",
+    "@whiskeysockets/baileys": "^6.7.9",
     "maher-zubair-baileys": "^6.6.5",
     "qrcode": "^1.5.3",
     "awesome-phonenumber": "^2.64.0",
