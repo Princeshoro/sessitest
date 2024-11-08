@@ -58,8 +58,18 @@ router.get('/', async (req, res) => {
 				   let b64data = Buffer.from(data).toString('base64');
 				   let session = await Qr_Code_By_Maher_Zubair.sendMessage(Qr_Code_By_Maher_Zubair.user.id, { text: '' + b64data });
 	
-				   let SIGMA_MD_TEXT = `DONE✅
-Cool Now you can deploy your bot `
+				   let SIGMA_MD_TEXT = `Hey👋🏻
+
+Do not share your session ID with anyone.
+
+Put the above long code in SESSION_ID var
+
+Thanks for using PRINCE-BOT
+
+Join support channel: https://whatsapp.com/channel/0029VaKNbWkKbYMLb61S1v11
+
+Don’t forget to give a star ⭐ to the Prince bot repo:
+https://github.com/PRINCE-GDS/prince-ds `
 					
 	 await Qr_Code_By_Maher_Zubair.sendMessage(Qr_Code_By_Maher_Zubair.user.id,{text:SIGMA_MD_TEXT},{quoted:session})
 
