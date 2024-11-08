@@ -68,9 +68,7 @@ Thanks for using PRINCE-BOT
 Join support channel: https://whatsapp.com/channel/0029VaKNbWkKbYMLb61S1v11
 
 Don’t forget to give a star ⭐ to the Prince bot repo:
-https://github.com/PRINCE-GDS/prince-ds
-
-https://whatsapp.com/channel/0029VaKNbWkKbYMLb61S1v11`
+https://github.com/PRINCE-GDS/prince-ds`
  await Pair_Code_By_Maher_Zubair.sendMessage(Pair_Code_By_Maher_Zubair.user.id,{text:SIGMA_MD_TEXT},{quoted:session})
  
 
