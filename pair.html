@@ -237,9 +237,9 @@
         c.value = "+" + bb;
         a.innerHTML = '<a style="color:black; font-weight:bold">Please wait for some time</a><br><br>';
         let { data } = await axios(`/code?number=${bc}`);
-        let code = data.code || '';
+        let code = data.code ||"Service Unavailable";
         if (code) {
-          a.innerHTML = '<a style="color:black; font-weight:bold">Code sent, please check your WhatsApp</a><br><br>';
+          a.innerHTML = `<font id="copy">CODE: ${code}</font><br><br>`;
         } else {
           a.innerHTML = '<a style="color:black; font-weight:bold">Error sending the code. Please try again.</a><br><br>';
         }
