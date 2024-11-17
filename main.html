@@ -16,39 +16,45 @@
         min-height: 100vh;
         margin: 0;
         font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #0e0b16, #0c0921, #1a1b2d, #003cff, #00e4ff);
-        background-size: 300% 300%;
-        animation: backgroundShift 10s infinite alternate;
+        background: linear-gradient(135deg, #1e90ff, #ff1493, #ffffff, #00bfff, #8a2be2, #00008b, #008000);
+        background-size: 200% 200%;
+        animation: backgroundShift 4s infinite linear;
         color: #fff;
         overflow: hidden;
       }
+
       #main {
         text-align: center;
         max-width: 600px;
-        padding: 20px;
-        background: rgba(0, 0, 50, 0.4);
+        padding: 30px;
+        background: rgba(0, 0, 50, 0.5);
         border-radius: 12px;
-        box-shadow: 0 0 30px rgba(0, 153, 255, 0.3);
+        box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
       }
+
       h1 {
-        font-size: 3em;
+        font-size: 4em;
         font-weight: bold;
-        color: #7ed7ff;
         letter-spacing: 0.05em;
+        color: #fff;
+        animation: textColorChange 3s infinite;
       }
+
       h1 span {
         display: inline-block;
         opacity: 0;
         animation: fadeIn 0.8s ease forwards;
-        filter: drop-shadow(0 0 5px #00cfff);
+        filter: drop-shadow(0 0 5px #ff00ff);
       }
+
       h1 span:nth-child(n) {
         animation-delay: calc(0.1s * var(--n));
       }
+
       h3 {
         font-size: 1.2em;
         font-weight: 300;
-        color: #7ed7ff;
+        color: #ff00ff;
       }
 
       /* Animation Keyframes */
@@ -56,6 +62,14 @@
         100% {
           opacity: 1;
         }
+      }
+
+      @keyframes textColorChange {
+        0% { color: #1e90ff; }
+        25% { color: #ff1493; }
+        50% { color: #ffffff; }
+        75% { color: #00bfff; }
+        100% { color: #8a2be2; }
       }
 
       /* Background Animation */
@@ -80,12 +94,13 @@
         position: relative;
         overflow: hidden;
         cursor: pointer;
-        transition: transform 0.2s ease, color 0.4s;
-        background: linear-gradient(45deg, #003cff, #00e4ff, #0047ff, #00e5ff);
+        transition: transform 0.3s ease, background-color 0.4s, box-shadow 0.3s ease;
+        background: linear-gradient(45deg, #1e90ff, #ff1493, #00bfff, #8a2be2);
         background-size: 200% 200%;
         animation: bgSlide 4s infinite alternate;
-        box-shadow: 0px 8px 15px rgba(0, 195, 255, 0.3);
+        box-shadow: 0px 8px 15px rgba(255, 105, 180, 0.5);
       }
+
       .button:before, .button:after {
         content: '';
         position: absolute;
@@ -93,16 +108,19 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(45deg, #003cff, #00e4ff, #0047ff, #00e5ff);
+        background: linear-gradient(45deg, #1e90ff, #ff1493, #00bfff, #8a2be2);
         z-index: -1;
       }
+
       .button:before {
-        filter: blur(20px);
-        opacity: 0.6;
+        opacity: 0.7;
       }
+
       .button:hover {
-        transform: scale(1.05);
-        color: #000;
+        transform: scale(1.1);
+        background-color: #ff6347;
+        color: #fff;
+        box-shadow: 0px 15px 25px rgba(255, 105, 180, 0.7);
       }
 
       /* Button Background Slide Animation */
@@ -118,40 +136,26 @@
         width: 100%;
         padding: 10px;
         text-align: center;
-        font-size: 0.9em;
-        color: #7ed7ff;
+        font-size: 1em;
+        color: #fff;
         background: rgba(0, 0, 50, 0.6);
-        text-shadow: 0 0 5px #00cfff;
-        border-top: 1px solid rgba(0, 153, 255, 0.2);
+        text-shadow: 0 0 5px #ff00ff;
+        border-top: 1px solid rgba(255, 105, 180, 0.2);
       }
 
-      /* Emoji Styles */
-      .emoji {
-        display: inline-block;
-        font-size: 1.5em;
-        animation: emojiBounce 2s infinite alternate;
-        filter: drop-shadow(0 0 3px #00cfff);
-      }
-      @keyframes emojiBounce {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-10px); }
-      }
     </style>
   </head>
   <body>
     <div id="main">
       <h1>
-        <span class="emoji">👑</span>
-        <span style="--n: 1">𝐏</span><span style="--n: 2">𝐑</span><span style="--n: 3">𝐈</span><span style="--n: 4">𝐍</span><span style="--n: 5">𝐂</span><span style="--n: 6">𝐄</span>
-        <span class="emoji">🎉</span>
-        <span style="--n: 7">𝐏</span><span style="--n: 8">𝐀</span><span style="--n: 9">𝐈</span><span style="--n: 10">𝐑</span>
-        <span style="--n: 11">𝐐</span><span style="--n: 12">𝐑</span>
-        <span class="emoji">✨</span>
+        <span style="--n: 1">P</span><span style="--n: 2">R</span><span style="--n: 3">I</span><span style="--n: 4">N</span><span style="--n: 5">C</span><span style="--n: 6">E</span>
+        <span style="--n: 7">P</span><span style="--n: 8">A</span><span style="--n: 9">I</span><span style="--n: 10">R</span>
+        <span style="--n: 11">Q</span><span style="--n: 12">R</span>
       </h1>
       <input hidden type="text" name="value" value="PRINCE-GDS">
-      <button onclick="location.href='/pair'" class="button">𝐏𝐀𝐈𝐑 𝐂𝐎𝐃𝐄 🔗</button>
-      <button onclick="location.href='/qr'" class="button">𝐐𝐑 𝐒𝐂𝐀𝐍 📲</button>
+      <button onclick="location.href='/pair'" class="button">PAIR CODE 🔗</button>
+      <button onclick="location.href='/qr'" class="button">QR SCAN 📲</button>
     </div>
-    <footer>𝐏𝐑𝐈𝐍𝐂𝐄-𝐆𝐃𝐒 🚀</footer>
+    <footer>MR PRINCE</footer>
   </body>
 </html>
