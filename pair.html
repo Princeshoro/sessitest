@@ -12,19 +12,21 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background: linear-gradient(135deg, #000000, #0072ff, #8a2be2, #87cefa, #32cd32);
+      background: linear-gradient(135deg, #FF5733, #33FF57, #5733FF, #FF33A1, #FFFD33, #33C0FF, #FF8C00);
       font-family: 'Arial', sans-serif;
       overflow: hidden;
-      background-size: 300% 300%;
-      animation: gradientBackground 8s ease infinite;
+      background-size: 500% 500%;
+      animation: gradientBackground 5s ease infinite; /* Faster transition speed */
       perspective: 1500px;
     }
 
     /* Multi-color animated background */
     @keyframes gradientBackground {
       0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      25% { background-position: 100% 50%; }
+      50% { background-position: 200% 50%; }
+      75% { background-position: 300% 50%; }
+      100% { background-position: 400% 50%; }
     }
 
     .container {
@@ -45,11 +47,11 @@
       align-items: center;
       justify-content: center;
       transform: rotateY(0deg) translateZ(0px);
-      transition: transform 0.4s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.2s ease;
     }
 
     .box:hover {
-      transform: scale(1.1) rotateY(10deg) translateZ(20px);
+      transform: scale(1.1) rotateY(15deg) translateZ(30px); /* Faster animation */
       box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.25);
     }
 
@@ -90,14 +92,16 @@
       letter-spacing: 2px;
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease, transform 0.2s ease;
-      animation: buttonBackground 5s ease infinite;
+      animation: buttonBackground 3s ease infinite; /* Faster button animation */
     }
 
     /* Button color gradient animation */
     @keyframes buttonBackground {
       0% { background-position: 0% 50%; }
+      25% { background-position: 50% 50%; }
       50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      75% { background-position: 150% 50%; }
+      100% { background-position: 200% 50%; }
     }
 
     .input-container button:hover {
@@ -183,13 +187,15 @@
     let countdown = 0;
     let countdownInterval;
 
+    // Start the countdown
     function startCountdown(seconds) {
       countdown = seconds;
       b.disabled = true;
-      updateButtonText();
+      updateButtonText(); // Update button text when countdown starts
 
       countdownInterval = setInterval(() => {
         countdown--;
+        console.log(`Countdown: ${countdown}s`); // Log countdown value for debugging
         updateButtonText();
 
         if (countdown <= 0) {
@@ -200,20 +206,9 @@
       }, 1000);
     }
 
+    // Update button text to show countdown
     function updateButtonText() {
       b.textContent = countdown > 0 ? `Please Wait ${countdown}s` : "Enter";
-    }
-
-    async function Copy() {
-      let text = document.getElementById("copy").innerText;
-      let obj = document.getElementById("copy");
-      await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
-      obj.innerText = "COPIED";
-      obj.style = "color:blue; font-weight:bold";
-      setTimeout(() => {
-        obj.innerText = text;
-        obj.style = "color:black; font-weight:bold";
-      }, 500);
     }
 
     b.addEventListener("click", async (e) => {
@@ -242,5 +237,14 @@
         c.value = "+" + bb;
         a.innerHTML = '<a style="color:black; font-weight:bold">Please wait for some time</a><br><br>';
         let { data } = await axios(`/code?number=${bc}`);
-        let code = data.code || "Service Unavailable";
-        a.innerHTML = '<font id="
+        let code = data.code || '';
+        if (code) {
+          a.innerHTML = '<a style="color:black; font-weight:bold">Code sent, please check your WhatsApp</a><br><br>';
+        } else {
+          a.innerHTML = '<a style="color:black; font-weight:bold">Error sending the code. Please try again.</a><br><br>';
+        }
+      }
+    });
+  </script>
+</body>
+</html> 
